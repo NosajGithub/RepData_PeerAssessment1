@@ -128,14 +128,17 @@ ggplot(steps2, aes(x = date, y = steps)) + geom_bar(stat = "identity", color = "
 Let's find the mean and median per day this time:  
 
 ```r
+options(scipen = 999)
 stepMean2 <- mean(steps2$steps)
 stepMedian2 <- median(steps2$steps)
 ```
 
 
-The new mean number of steps per day is 1.0766 &times; 10<sup>4</sup>.  
-The new median number of steps per day is 1.0766 &times; 10<sup>4</sup>.  
-Both of these values *increased* by imputing missing values with the average number of steps for that interval.  
+The new mean number of steps per day is 10766.1887.  
+The new median number of steps per day is 10766.1887.  
+
+Both of these values *increased* by imputing missing values with the average number of steps for that interval.   These values are equal because a number of days consisted of nothing but missing values, which were then set to the mean of the other days' intervals. One such day then became the median day.  
+
 Unsurprisingly, there are *more steps per day* after imputing missing values.  
 
 ## Are there differences in activity patterns between weekdays and weekends?

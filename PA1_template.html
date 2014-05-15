@@ -286,14 +286,17 @@ ggplot(steps2, aes(x = date, y = steps)) + geom_bar(stat = &quot;identity&quot;,
 
 <p>Let&#39;s find the mean and median per day this time:  </p>
 
-<pre><code class="r">stepMean2 &lt;- mean(steps2$steps)
+<pre><code class="r">options(scipen = 999)
+stepMean2 &lt;- mean(steps2$steps)
 stepMedian2 &lt;- median(steps2$steps)
 </code></pre>
 
-<p>The new mean number of steps per day is 1.0766 &times; 10<sup>4</sup>.<br/>
-The new median number of steps per day is 1.0766 &times; 10<sup>4</sup>.<br/>
-Both of these values <em>increased</em> by imputing missing values with the average number of steps for that interval.<br/>
-Unsurprisingly, there are <em>more steps per day</em> after imputing missing values.  </p>
+<p>The new mean number of steps per day is 10766.1887.<br/>
+The new median number of steps per day is 10766.1887.  </p>
+
+<p>Both of these values <em>increased</em> by imputing missing values with the average number of steps for that interval.   These values are equal because a number of days consisted of nothing but missing values, which were then set to the mean of the other days&#39; intervals. One such day then became the median day.  </p>
+
+<p>Unsurprisingly, there are <em>more steps per day</em> after imputing missing values.  </p>
 
 <h2>Are there differences in activity patterns between weekdays and weekends?</h2>
 
